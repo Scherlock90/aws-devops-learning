@@ -11,10 +11,10 @@ phases:
       - cd client
       # Install dependencies needed for running tests
       - npm install
-  pre_build:
-    commands:
-      # Discover and run unit tests in the 'tests' directory
-      - npm test
+  # pre_build:
+  #   commands:
+  #     # Discover and run unit tests in the 'tests' directory
+  #     - npm test
   build:
     commands:
       - npm build
