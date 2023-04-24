@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: 16
     commands:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
@@ -17,7 +17,7 @@ phases:
   #     - npm test
   build:
     commands:
-      - npm build
+      - npm run build
       - cd ..
       # Use AWS SAM to package the application by using AWS CloudFormation
       - aws s3 cp --recursive client/build/ s3://$WEBSITE_S3_BUCKET/public/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
